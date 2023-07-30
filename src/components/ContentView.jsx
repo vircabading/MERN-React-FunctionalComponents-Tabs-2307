@@ -9,8 +9,8 @@ const ContentView = (props) => {
             {
                 tabs.map((tab,i) =>
                     (i === currentTab) ?
-                        <div>{tab.content}</div> :
-                        <div></div>
+                        <div key={i} >{tab.content}</div> :
+                        <div key={i} ></div>
                 )
             }
         </div>

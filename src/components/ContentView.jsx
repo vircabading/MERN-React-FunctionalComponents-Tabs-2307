@@ -6,9 +6,13 @@ const ContentView = (props) => {
 
     return (
         <div>
-            <h3>Content</h3>
-            <hr />
-            <p>Current Tab: {JSON.stringify(currentTab)}</p>
+            {
+                tabs.map((tab,i) =>
+                    (i === currentTab) ?
+                        <div>{tab.content}</div> :
+                        <div></div>
+                )
+            }
         </div>
     )
 }

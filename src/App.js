@@ -22,7 +22,8 @@ function App() {
   ]
 
   const getNewTab = (newTab) => {
-    setCurrentTab= newTab;
+    console.log("*** In Get New Tab")
+    setCurrentTab(newTab);
   }
 
   /////////////////////////////////////////////////
@@ -32,6 +33,7 @@ function App() {
       <NavBarView />
       <div className='container mt-4 p-2 bg-white text-dark-color  round'>
         <h1 >Tabs App</h1>
+        <p>Current Tab: {JSON.stringify(currentTab)}</p>
         <p>Tabs: {JSON.stringify(tabs)}</p>
         <hr />
         <TabView  currentTab= { currentTab }

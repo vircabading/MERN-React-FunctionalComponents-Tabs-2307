@@ -1,12 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 ///////////////////////////////////////////////////
 //  TAB VIEW COMPONENT
 ///////////////////////////////////////////////////
 
 const TabView = (props) => {
-    const [currentTab, setCurrentTab] = useState(props.currentTab);
+    let currentTab = props.currentTab;
     const tabs = props.tabs;
+
+    const setNewTab = (e, newTabLocation) => {
+        console.log("*** in set new tab");
+        console.log("new tab: ", newTabLocation);
+        props.getNewTab(newTabLocation);
+    }
 
     return (
         <div className='bg-light-color m-2 p-2 round' >
@@ -17,10 +23,11 @@ const TabView = (props) => {
             </p>
             {
                 tabs.map((tab, i) =>
-                    <div>
-                        <p>Location: {i}</p>
-                        <p>Tab: {JSON.stringify(tab.label)}</p>
-                    </div>
+                    <button     className='btn bg-dark-color text-white m-2 p-2 round'
+                                onClick={ (e)=>setNewTab(e, i) } 
+                                key={i} >
+                        <strong>{ tab.label }</strong>
+                    </button>
                 )
             }
         </div>

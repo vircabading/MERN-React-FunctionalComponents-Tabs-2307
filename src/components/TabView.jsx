@@ -16,11 +16,7 @@ const TabView = (props) => {
 
     return (
         <div className='bg-light-color m-2 p-2 round' >
-            <h3>Tab View Component</h3>
-            <br />
-            <p>
-                Current Tab: {JSON.stringify(currentTab)};
-            </p>
+            <h3>Tabs</h3>
             {
                 tabs.map((tab, i) =>
                     <button     className='btn bg-dark-color text-white m-2 p-2 round'

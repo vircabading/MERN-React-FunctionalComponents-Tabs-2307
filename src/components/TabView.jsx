@@ -5,19 +5,24 @@ import React, { useState } from 'react'
 ///////////////////////////////////////////////////
 
 const TabView = (props) => {
-    const [curerentTab, setCurerentTab] = useState(props.currentTab);
+    const [currentTab, setCurrentTab] = useState(props.currentTab);
     const tabs = props.tabs;
 
     return (
-        <div>
+        <div className='bg-light-color m-2 p-2 round' >
             <h3>Tab View Component</h3>
             <br />
             <p>
-                Current Tab: {JSON.stringify(curerentTab)};
+                Current Tab: {JSON.stringify(currentTab)};
             </p>
-            <p>
-                Tab Array: {JSON.stringify(tabs)};
-            </p>
+            {
+                tabs.map((tab, i) =>
+                    <div>
+                        <p>Location: {i}</p>
+                        <p>Tab: {JSON.stringify(tab.label)}</p>
+                    </div>
+                )
+            }
         </div>
     )
 }

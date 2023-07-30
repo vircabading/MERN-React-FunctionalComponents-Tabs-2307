@@ -10,3 +10,15 @@
 .text-dark-color {
   color: #604D53;
 }
+
+.text-light-color {
+  color: mistyrose;
+}
+
+.bg-dark-color {
+  background-color: #604D53
+}
+
+.bg-nav-button {
+  background-color: #9DA3A4;
+}

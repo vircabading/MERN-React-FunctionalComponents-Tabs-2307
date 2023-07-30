@@ -6,6 +6,7 @@ import React, { useState } from 'react'
 
 const TabView = (props) => {
     const [curerentTab, setCurerentTab] = useState(props.currentTab);
+    const tabs = props.tabs;
 
     return (
         <div>
@@ -13,6 +14,9 @@ const TabView = (props) => {
             <br />
             <p>
                 Current Tab: {JSON.stringify(curerentTab)};
+            </p>
+            <p>
+                Tab Array: {JSON.stringify(tabs)};
             </p>
         </div>
     )
